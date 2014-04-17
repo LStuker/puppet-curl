@@ -5,7 +5,7 @@
 #
 class curl::params {
   case $::osfamily {
-    'Amazon', 'Debian', 'RedHat', 'Solaris', 'SLES', 'Suse': {
+    'Amazon', 'Debian', 'RedHat', 'Solaris', 'Suse': {
       $package_name = 'curl'
       $service_name = 'curl'
     }
