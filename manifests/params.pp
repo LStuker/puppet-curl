@@ -5,12 +5,22 @@
 #
 class curl::params {
   case $::osfamily {
-    'Amazon', 'Debian', 'RedHat', 'Solaris', 'Suse': {
+    'Amazon', 'Debian', 'RedHat', 'Suse': {
       $package_name = 'curl'
-      $service_name = 'curl'
+    }
+    solaris: {
+      case $::kernelrelease {
+        '5.11': {
+          $package = 'curl'
+        }
+        '5.10': {
+          $package = 'CSWcurl'
+          $package_provider = 'pkgutil'
+        }
+      }
     }
     default: {
-      fail("${::operatingsystem} not supported")
+      warning("Module 'curl' is not currently supported on ${::operatingsystem}")
     }
   }
 }

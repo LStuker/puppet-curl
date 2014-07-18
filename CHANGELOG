@@ -1,2 +1,7 @@
+2014-07-18 Release 0.0.2
+- Add support for Solaris 10 with opencsw package provider
+- Add params for init class
+- Remove install.pp
+
 2013-10-25 Release 0.0.1
 - first release
