@@ -33,7 +33,7 @@
 class curl(
   $ensure              = 'present',
   $autoupgrade         = false,
-  $package             = $curl::params::package,
+  $package             = $curl::params::package_name,
   $package_provider    = $curl::params::package_provider,
 ) inherits curl::params {
 

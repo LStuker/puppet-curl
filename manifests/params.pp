@@ -11,10 +11,10 @@ class curl::params {
     solaris: {
       case $::kernelrelease {
         '5.11': {
-          $package = 'curl'
+          $package_name = 'curl'
         }
         '5.10': {
-          $package = 'CSWcurl'
+          $package_name     = 'CSWcurl'
           $package_provider = 'pkgutil'
         }
       }
